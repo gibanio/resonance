@@ -110,10 +110,10 @@ export function useAudioRecorder() {
 
       if (err instanceof DOMException && err.name === "NotAllowedError") {
         setError(
-          "Microphone access denied. Please allow microphone access in your browser settings.",
+          "마이크 접근이 거부되었습니다. 브라우저 설정에서 마이크 접근을 허용해 주세요.",
         );
       } else {
-        setError("Failed to access microphone. Please check your device.");
+        setError("마이크 접근에 실패했습니다. 장치를 확인해 주세요.");
       }
     }
   }, [cleanup]);

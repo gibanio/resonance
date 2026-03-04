@@ -11,8 +11,8 @@ import { useAppForm } from "@/hooks/use-app-form";
 import { useCheckout } from "@/features/billing/hooks/use-checkout";
 
 const ttsFormSchema = z.object({
-  text: z.string().min(1, "Please enter some text"),
-  voiceId: z.string().min(1, "Please select a voice"),
+  text: z.string().min(1, "텍스트를 입력해 주세요"),
+  voiceId: z.string().min(1, "음성을 선택해 주세요"),
   temperature: z.number(),
   topP: z.number(),
   topK: z.number(),
@@ -66,16 +66,16 @@ export function TextToSpeechForm({
           repetitionPenalty: value.repetitionPenalty,
         });
 
-        toast.success("Audio generated successfully!");
+        toast.success("오디오가 성공적으로 생성되었습니다!");
         router.push(`/text-to-speech/${data.id}`);
       } catch (error) {
         const message =
-          error instanceof Error ? error.message : "Failed to generate audio";
+          error instanceof Error ? error.message : "오디오 생성에 실패했습니다";
 
         if (message === "SUBSCRIPTION_REQUIRED") {
-          toast.error("Subscription required", {
+          toast.error("구독이 필요합니다", {
             action: {
-              label: "Subscribe",
+              label: "구독하기",
               onClick: () => checkout(),
             },
           });

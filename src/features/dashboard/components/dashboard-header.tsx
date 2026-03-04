@@ -13,7 +13,7 @@ export function DashboardHeader() {
     <div className="flex items-start justify-between">
       <div className="space-y-1">
         <p className="text-sm text-muted-foreground">
-          Nice to see you
+          반갑습니다
         </p>
         <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight">
           {isLoaded ? (user?.fullName ?? user?.firstName ?? "there") : "..."}
@@ -24,13 +24,13 @@ export function DashboardHeader() {
         <Button variant="outline" size="sm" asChild>
           <Link href="mailto:business@codewithantonio.com">
             <ThumbsUp />
-            <span className="hidden lg:block">Feedback</span>
+            <span className="hidden lg:block">피드백</span>
           </Link>
         </Button>
         <Button variant="outline" size="sm" asChild>
           <Link href="mailto:business@codewithantonio.com">
             <Headphones />
-            <span className="hidden lg:block">Need help?</span>
+            <span className="hidden lg:block">도움이 필요하신가요?</span>
           </Link>
         </Button>
       </div>

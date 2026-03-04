@@ -28,10 +28,10 @@ export function VoicesToolbar() {
     <div className="space-y-4">
       <div>
         <h2 className="text-xl lg:text-2xl font-semibold tracking-tight">
-          All Libraries
+          전체 라이브러리
         </h2>
         <p className="text-sm text-muted-foreground">
-          Discover your voices, or make your own
+          음성을 탐색하거나 직접 만들어 보세요
         </p>
       </div>
 
@@ -42,7 +42,7 @@ export function VoicesToolbar() {
               <Search className="size-4" />
             </InputGroupAddon>
             <InputGroupInput
-              placeholder="Search voices..."
+              placeholder="음성 검색..."
               value={localQuery}
               onChange={(e) => {
                 setLocalQuery(e.target.value);
@@ -54,7 +54,7 @@ export function VoicesToolbar() {
             <VoiceCreateDialog>
               <Button size="sm">
                 <Sparkles />
-                Custom voice
+                커스텀 음성
               </Button>
             </VoiceCreateDialog>
           </div>
@@ -62,7 +62,7 @@ export function VoicesToolbar() {
             <VoiceCreateDialog>
               <Button size="sm" className="w-full">
                 <Sparkles />
-                Custom voice
+                커스텀 음성
               </Button>
             </VoiceCreateDialog>
           </div>

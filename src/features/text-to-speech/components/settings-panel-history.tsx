@@ -33,10 +33,10 @@ export function SettingsPanelHistory() {
 
         </div>
         <p className="font-semibold tracking-tight text-foreground">
-          No generations yet
+          아직 생성된 항목이 없습니다
         </p>
         <p className="max-w-48 text-center text-xs text-muted-foreground">
-          Generate some audio and it will appear here
+          오디오를 생성하면 여기에 표시됩니다
         </p>
       </div>
     );

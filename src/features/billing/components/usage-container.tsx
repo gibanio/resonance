@@ -7,7 +7,7 @@ import { useCheckout } from "@/features/billing/hooks/use-checkout";
 import { useTRPC } from "@/trpc/client";
 
 function formatCurrency(cents: number): string {
-  return new Intl.NumberFormat("en-US", {
+  return new Intl.NumberFormat("ko-KR", {
     style: "currency",
     currency: "USD",
   }).format(cents / 100);
@@ -20,10 +20,10 @@ function UpgradeCard() {
     <div className="flex flex-col gap-3">
       <div>
         <p className="text-sm font-semibold tracking-tight text-foreground">
-          Pay as you go
+          종량제 요금
         </p>
         <p className="text-xs text-muted-foreground mt-1">
-          Generate speech starting at $0.30 per 1,000 characters
+          1,000자당 $0.30부터 음성 생성 가능
         </p>
       </div>
       <Button
@@ -36,10 +36,10 @@ function UpgradeCard() {
         {isCheckoutPending ? (
           <>
             <Spinner className="size-3" />
-            Redirecting...
+            이동 중...
           </>
         ) : (
-          "Upgrade"
+          "업그레이드"
         )}
       </Button>
     </div>
@@ -68,13 +68,13 @@ function UsageCard({
     <div className="flex flex-col gap-3">
       <div>
         <p className="text-sm font-semibold tracking-tight text-foreground">
-          Current usage
+          현재 사용량
         </p>
         <p className="text-xl font-bold tracking-tight text-foreground mt-1">
           {formatCurrency(estimatedCostCents)}
         </p>
         <p className="text-xs text-muted-foreground mt-0.5">
-          Estimated this period
+          이번 기간 예상 금액
         </p>
       </div>
       <Button
@@ -87,10 +87,10 @@ function UsageCard({
         {portalMutation.isPending ? (
           <>
             <Spinner className="size-3" />
-            Redirecting...
+            이동 중...
           </>
         ) : (
-          "Manage Subscription"
+          "구독 관리"
         )}
       </Button>
     </div>

@@ -26,10 +26,10 @@ export function GenerateButton({
       {isSubmitting ? (
         <>
           <Spinner className="size-3" />
-          Generating...
+          생성 중...
         </>
       ): (
-        "Generate speech"
+        "음성 생성"
       )}
     </Button>
   );

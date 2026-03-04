@@ -43,9 +43,9 @@ export function VoiceCreateDialog({
   const handleError = useCallback(
     (message: string) => {
       if (message === "SUBSCRIPTION_REQUIRED") {
-        toast.error("Subscription required", {
+        toast.error("구독이 필요합니다", {
           action: {
-            label: "Subscribe",
+            label: "구독하기",
             onClick: () => checkout(),
           },
         });
@@ -62,10 +62,10 @@ export function VoiceCreateDialog({
         {children && <DrawerTrigger asChild>{children}</DrawerTrigger>}
         <DrawerContent>
           <DrawerHeader>
-            <DrawerTitle>Create custom voice</DrawerTitle>
+            <DrawerTitle>커스텀 음성 만들기</DrawerTitle>
             <DrawerDescription>
-              Upload or record an audio sample to add a new voice to your
-              library.
+              오디오 샘플을 업로드하거나 녹음하여 라이브러리에 새 음성을
+              추가하세요.
             </DrawerDescription>
           </DrawerHeader>
           <VoiceCreateForm
@@ -75,7 +75,7 @@ export function VoiceCreateDialog({
               <DrawerFooter>
                 {submit}
                 <DrawerClose asChild>
-                  <Button variant="outline">Cancel</Button>
+                  <Button variant="outline">취소</Button>
                 </DrawerClose>
               </DrawerFooter>
             )}
@@ -90,9 +90,9 @@ export function VoiceCreateDialog({
       {children && <DialogTrigger asChild>{children}</DialogTrigger>}
       <DialogContent>
         <DialogHeader className="text-left">
-          <DialogTitle>Create custom voice</DialogTitle>
+          <DialogTitle>커스텀 음성 만들기</DialogTitle>
           <DialogDescription>
-            Upload or record an audio sample to add a new voice to your library.
+            오디오 샘플을 업로드하거나 녹음하여 라이브러리에 새 음성을 추가하세요.
           </DialogDescription>
         </DialogHeader>
         <VoiceCreateForm onError={handleError} />

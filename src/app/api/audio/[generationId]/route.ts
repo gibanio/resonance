@@ -9,7 +9,7 @@ export async function GET(
   const { userId, orgId } = await auth();
 
   if (!userId || !orgId) {
-    return new Response("Unauthorized", { status: 401 });
+    return new Response("인증되지 않았습니다", { status: 401 });
   }
 
   const { generationId } = await params;
@@ -19,18 +19,18 @@ export async function GET(
   });
 
   if (!generation) {
-    return new Response("Not found", { status: 404 });
+    return new Response("찾을 수 없습니다", { status: 404 });
   }
 
   if (!generation.r2ObjectKey) {
-    return new Response("Audio is not available yet", { status: 409 });
+    return new Response("오디오가 아직 준비되지 않았습니다", { status: 409 });
   }
 
   const signedUrl = await getSignedAudioUrl(generation.r2ObjectKey);
   const audioResponse = await fetch(signedUrl);
 
   if (!audioResponse.ok) {
-    return new Response("Failed to fetch audio", { status: 502 });
+    return new Response("오디오를 가져오는 데 실패했습니다", { status: 502 });
   }
 
   return new Response(audioResponse.body, {

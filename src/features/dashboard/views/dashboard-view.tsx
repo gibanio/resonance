@@ -7,7 +7,7 @@ import { QuickActionsPanel } from "@/features/dashboard/components/quick-actions
 export function DashboardView() {
   return (
     <div className="relative">
-      <PageHeader title="Dashboard" className="lg:hidden" />
+      <PageHeader title="대시보드" className="lg:hidden" />
       <HeroPattern />
       <div className="relative space-y-8 p-4 lg:p-16">
         <DashboardHeader />

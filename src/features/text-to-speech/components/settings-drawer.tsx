@@ -35,7 +35,7 @@ export function SettingsDrawer({
       )}
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Settings</DrawerTitle>
+          <DrawerTitle>설정</DrawerTitle>
         </DrawerHeader>
         <div className="overflow-y-auto">
           <SettingsPanelSettings />

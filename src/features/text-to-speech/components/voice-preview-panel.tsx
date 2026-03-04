@@ -73,7 +73,7 @@ export function VoicePreviewPanel({
     <div className="h-full gap-8 flex-col border-t hidden flex-1 lg:flex">
       {/* Header */}
       <div className="p-6 pb-0">
-        <h3 className="font-semibold text-foreground">Voice preview</h3>
+        <h3 className="font-semibold text-foreground">음성 미리듣기</h3>
       </div>
 
       {/* Content */}
@@ -85,7 +85,7 @@ export function VoicePreviewPanel({
               className="gap-2 bg-background/90 px-3 py-1.5 text-sm text-muted-foreground shadow-sm"
             >
               <Spinner className="size-4" />
-              <span>Loading audio...</span>
+              <span>오디오 로딩 중...</span>
             </Badge>
           </div>
         )}
@@ -174,7 +174,7 @@ export function VoicePreviewPanel({
               disabled={isDownloading}
             >
               <Download className="size-4" />
-              Download
+              다운로드
             </Button>
           </div>
 

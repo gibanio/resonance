@@ -35,7 +35,7 @@ export function TextInputPanel() {
             <Textarea
               value={field.state.value}
               onChange={(e) => field.handleChange(e.target.value)}
-              placeholder="Start typing or paste your text here..."
+              placeholder="텍스트를 입력하거나 붙여넣으세요..."
               className="absolute inset-0 resize-none border-0 bg-transparent p-4 pb-6 lg:p-6 lg:pb-8 text-base! leading-relaxed tracking-tight shadow-none wrap-break-word focus-visible:ring-0"
               maxLength={TEXT_MAX_LENGTH}
               disabled={isSubmitting}
@@ -71,14 +71,14 @@ export function TextInputPanel() {
                 <span className="tabular-nums">
                   ${(text.length * COST_PER_UNIT).toFixed(4)}
                 </span>&nbsp;
-                estimated
+                예상
               </span>
             </Badge>
             <div className="flex items-center gap-3">
               <p className="text-xs tracking-tight">
                 {text.length.toLocaleString()}
                 <span className="text-muted-foreground">
-                  &nbsp;/&nbsp;{TEXT_MAX_LENGTH.toLocaleString()} characters
+                  &nbsp;/&nbsp;{TEXT_MAX_LENGTH.toLocaleString()} 자
                 </span>
               </p>
               <GenerateButton

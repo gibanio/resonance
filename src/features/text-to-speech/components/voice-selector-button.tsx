@@ -20,7 +20,7 @@ export function VoiceSelectorButton() {
   const currentVoice = 
     allVoices.find((v) => v.id === voiceId) ?? allVoices[0];
 
-  const buttonLabel = currentVoice?.name ?? "Select voice";
+  const buttonLabel = currentVoice?.name ?? "음성 선택";
 
   return (
     <DrawerTrigger asChild>

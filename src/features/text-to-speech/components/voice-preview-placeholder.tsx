@@ -24,16 +24,16 @@ export function VoicePreviewPlaceholder() {
         </div>
 
         <p className="text-lg font-semibold tracking-tight text-foreground">
-          Preview will appear here
+          미리듣기가 여기에 표시됩니다
         </p>
         <p className="max-w-64 text-center text-sm text-muted-foreground">
-          Once you generate, your audio result will appear here. Sit back and relax.
+          음성을 생성하면 결과가 여기에 표시됩니다. 편하게 기다려 주세요.
         </p>
       </div>
       <Button variant="outline" size="sm" asChild>
         <Link href="mailto:business@codewithantonio.com">
           <BookOpen />
-          Don&apos;t know how?
+          사용 방법이 궁금하신가요?
         </Link>
       </Button>
     </div>

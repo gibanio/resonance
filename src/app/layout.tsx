@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: "Resonance",
     template: "%s | Resonance"
   },
-  description: "AI-powered text-to-speech and voice cloning platform",
+  description: "AI 기반 텍스트 음성 변환 및 음성 복제 플랫폼",
 };
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <TRPCReactProvider>
-        <html lang="en">
+        <html lang="ko">
           <body
             className={`${inter.variable} ${geistMono.variable} antialiased`}
           >

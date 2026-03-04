@@ -84,14 +84,14 @@ export const voicesRouter = createTRPCRouter({
         if (!voice) {
           throw new TRPCError({
             code: "NOT_FOUND",
-            message: "Voice not found",
+            message: "음성을 찾을 수 없습니다",
           });
         }
 
         await prisma.voice.delete({ where: { id: voice.id } });
 
         if (voice.r2ObjectKey) {
-          // In production, consider background jobs, retires, cron jobs etc.
+          // 프로덕션에서는 백그라운드 작업, 재시도, 크론 작업 등을 고려
           await deleteAudio(voice.r2ObjectKey).catch(() => {});
         }
 

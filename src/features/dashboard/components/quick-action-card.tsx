@@ -44,7 +44,7 @@ export function QuickActionCard({
           asChild
         >
           <Link href={href}>
-            Try now
+            바로 시작
             <ArrowRight className="size-3" />
           </Link>
         </Button>

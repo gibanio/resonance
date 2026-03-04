@@ -36,7 +36,7 @@ interface VoiceCardProps {
   voice: VoiceItem;
 };
 
-const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
+const regionNames = new Intl.DisplayNames(["ko"], { type: "region" });
 
 function parseLanguage(locale: string) {
   const [, country] = locale.split("-");
@@ -63,13 +63,13 @@ export function VoiceCard({ voice }: VoiceCardProps) {
   const deleteMutation = useMutation(
     trpc.voices.delete.mutationOptions({
       onSuccess: () => {
-        toast.success("Voice deleted successfully");
+        toast.success("음성이 성공적으로 삭제되었습니다");
         queryClient.invalidateQueries({
           queryKey: trpc.voices.getAll.queryKey(),
         });
       },
       onError: (error) => {
-        toast.error(error.message ?? "Failed to delete voice");
+        toast.error(error.message ?? "음성 삭제에 실패했습니다");
       },
     }),
   );
@@ -138,7 +138,7 @@ export function VoiceCard({ voice }: VoiceCardProps) {
             <DropdownMenuItem asChild>
               <Link href={`/text-to-speech?voiceId=${voice.id}`}>
                 <Mic className="size-4 text-foreground" />
-                <span className="font-medium">Use this voice</span>
+                <span className="font-medium">이 음성 사용</span>
               </Link>
             </DropdownMenuItem>
             {voice.variant === "CUSTOM" && (
@@ -147,7 +147,7 @@ export function VoiceCard({ voice }: VoiceCardProps) {
                 className="text-destructive focus:text-destructive"
               >
                 <Trash2 className="size-4 text-destructive" />
-                <span className="font-medium">Delete voice</span>
+                <span className="font-medium">음성 삭제</span>
               </DropdownMenuItem>
             )}
           </DropdownMenuContent>
@@ -160,15 +160,15 @@ export function VoiceCard({ voice }: VoiceCardProps) {
           >
             <AlertDialogContent>
               <AlertDialogHeader>
-                <AlertDialogTitle>Delete voice</AlertDialogTitle>
+                <AlertDialogTitle>음성 삭제</AlertDialogTitle>
                 <AlertDialogDescription>
-                  Are you sure you want to delete &quot;{voice.name}&quot;? This
-                  action cannot be undone.
+                  &quot;{voice.name}&quot;을(를) 정말 삭제하시겠습니까? 이
+                  작업은 되돌릴 수 없습니다.
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
                 <AlertDialogCancel disabled={deleteMutation.isPending}>
-                  Cancel
+                  취소
                 </AlertDialogCancel>
                 <AlertDialogAction
                   variant="destructive"
@@ -181,7 +181,7 @@ export function VoiceCard({ voice }: VoiceCardProps) {
                     );
                   }}
                 >
-                  {deleteMutation.isPending ? "Deleting..." : "Delete"}
+                  {deleteMutation.isPending ? "삭제 중..." : "삭제"}
                 </AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>

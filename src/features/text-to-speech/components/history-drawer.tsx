@@ -23,7 +23,7 @@ export function HistoryDrawer() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>History</DrawerTitle>
+          <DrawerTitle>기록</DrawerTitle>
         </DrawerHeader>
         <div className="overflow-y-auto">
           <SettingsPanelHistory />

@@ -102,22 +102,22 @@ export function DashboardSidebar() {
 
   const mainMenuItems: MenuItem[] = [
     {
-      title: "Dashboard",
+      title: "대시보드",
       url: "/",
       icon: Home,
     },
     {
-      title: "Explore voices",
+      title: "음성 탐색",
       url: "/voices",
       icon: LayoutGrid,
     },
     {
-      title: "Text to speech",
+      title: "텍스트 음성 변환",
       url: "/text-to-speech",
       icon: AudioLines,
     },
     {
-      title: "Voice cloning",
+      title: "음성 복제",
       icon: Volume2,
       onClick: () => setVoiceDialogOpen(true),
     },
@@ -125,12 +125,12 @@ export function DashboardSidebar() {
 
   const othersMenuItems: MenuItem[] = [
     {
-      title: "Settings",
+      title: "설정",
       icon: Settings,
       onClick: () => clerk.openOrganizationProfile(),
     },
     {
-      title: "Help and support",
+      title: "도움말 및 지원",
       url: "mailto:business@codewithantonio.com",
       icon: Headphones,
     },
@@ -190,7 +190,7 @@ export function DashboardSidebar() {
       <SidebarContent>
         <NavSection items={mainMenuItems} pathname={pathname} />
         <NavSection
-          label="Others"
+          label="기타"
           items={othersMenuItems}
           pathname={pathname}
         />

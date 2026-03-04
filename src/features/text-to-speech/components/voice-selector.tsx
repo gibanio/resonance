@@ -41,14 +41,14 @@ export function VoiceSelector() {
     : hasMissingSelectedVoice
       ? {
         id: voiceId,
-        name: "Unavailable voice",
+        name: "사용 불가 음성",
         category: null as null,
       }
       : voices[0];
 
   return (
     <Field>
-      <FieldLabel>Voice style</FieldLabel>
+      <FieldLabel>음성 스타일</FieldLabel>
       <Select
         value={voiceId}
         onValueChange={(v) => form.setFieldValue("voiceId", v)}
@@ -76,7 +76,7 @@ export function VoiceSelector() {
           {hasMissingSelectedVoice && currentVoice && (
             <>
               <SelectGroup>
-                <SelectLabel>Selected Voice</SelectLabel>
+                <SelectLabel>선택된 음성</SelectLabel>
                 <SelectItem value={currentVoice.id}>
                   <VoiceAvatar
                     seed={currentVoice.id}
@@ -96,7 +96,7 @@ export function VoiceSelector() {
           )}
           {customVoices.length > 0 && (
             <SelectGroup>
-              <SelectLabel>Team Voices</SelectLabel>
+              <SelectLabel>팀 음성</SelectLabel>
               {customVoices.map((v) => (
                 <SelectItem key={v.id} value={v.id}>
                   <VoiceAvatar seed={v.id} name={v.name} />
@@ -112,7 +112,7 @@ export function VoiceSelector() {
           )}
           {systemVoices.length > 0 && (
             <SelectGroup>
-              <SelectLabel>Built-in Voices</SelectLabel>
+              <SelectLabel>기본 음성</SelectLabel>
               {systemVoices.map((v) => (
                 <SelectItem key={v.id} value={v.id}>
                   <VoiceAvatar seed={v.id} name={v.name} />

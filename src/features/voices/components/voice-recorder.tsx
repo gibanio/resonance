@@ -66,7 +66,7 @@ export function VoiceRecorder({
           size="sm"
           onClick={resetRecording}
         >
-          Try again
+          다시 시도
         </Button>
       </div>
     );
@@ -95,7 +95,7 @@ export function VoiceRecorder({
           variant="ghost"
           size="icon-sm"
           onClick={togglePlay}
-          title={isPlaying ? "Pause" : "Play"}
+          title={isPlaying ? "일시정지" : "재생"}
         >
           {isPlaying ? (
             <Pause className="size-4" />
@@ -108,7 +108,7 @@ export function VoiceRecorder({
           variant="ghost"
           size="icon-sm"
           onClick={handleReRecord}
-          title="Re-record"
+          title="다시 녹음"
         >
           <RotateCcw className="size-4" />
         </Button>
@@ -117,7 +117,7 @@ export function VoiceRecorder({
           variant="ghost"
           size="icon-sm"
           onClick={handleReRecord}
-          title="Remove"
+          title="삭제"
         >
           <X className="size-4" />
         </Button>
@@ -139,7 +139,7 @@ export function VoiceRecorder({
               onClick={handleStop}
             >
               <Square className="size-3" />
-              Stop
+              중지
             </Button>
          </div>
       </div>
@@ -159,10 +159,10 @@ export function VoiceRecorder({
 
       <div className="flex flex-col items-center gap-1.5">
         <p className="text-base font-semibold tracking-tight">
-          Record your voice
+          음성을 녹음하세요
         </p>
         <p className="text-center text-sm text-muted-foreground">
-          Click record to start capturing audio
+          녹음 버튼을 눌러 오디오 캡처를 시작하세요
         </p>
       </div>
       <Button
@@ -172,7 +172,7 @@ export function VoiceRecorder({
         onClick={startRecording}
       >
         <Mic className="size-3.5" />
-        Record
+        녹음
       </Button>
     </div>
   );

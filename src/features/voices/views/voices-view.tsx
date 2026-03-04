@@ -20,8 +20,8 @@ function VoicesContent() {
 
   return (
     <>
-      <VoicesList title="Team Voices" voices={data.custom} />
-      <VoicesList title="Built-in Voices" voices={data.system} />
+      <VoicesList title="팀 음성" voices={data.custom} />
+      <VoicesList title="기본 음성" voices={data.system} />
     </>
   );
 };

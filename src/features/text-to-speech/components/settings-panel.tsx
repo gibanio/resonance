@@ -23,11 +23,11 @@ export function SettingsPanel() {
         <TabsList className="w-full bg-transparent rounded-none border-b h-12 group-data-[orientation=horizontal]/tabs:h-12 p-0">
           <TabsTrigger value="settings" className={tabTriggerClassName}>
             <Settings className="size-4" />
-            Settings
+            설정
           </TabsTrigger>
           <TabsTrigger value="history" className={tabTriggerClassName}>
             <History className="size-4" />
-            History
+            기록
           </TabsTrigger>
         </TabsList>
         <TabsContent

@@ -32,11 +32,11 @@ export function VoicesList({ title, voices }: VoicesListProps) {
           </div>
 
           <p className="text-lg font-semibold tracking-tight text-foreground">
-            No voices found
+            음성을 찾을 수 없습니다
           </p>
 
           <p className="max-w-md text-center text-sm text-muted-foreground">
-            {title} will appear here
+            {title}이(가) 여기에 표시됩니다
           </p>
         </div>
       </div>

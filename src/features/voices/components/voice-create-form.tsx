@@ -72,13 +72,13 @@ const LANGUAGE_OPTIONS = locales.all
   }));
 
 const voiceCreateFormSchema = z.object({
-  name: z.string().min(1, "Name is required"),
+  name: z.string().min(1, "이름은 필수입니다"),
   file: z
-    .instanceof(File, { message: "An audio file is required" })
+    .instanceof(File, { message: "오디오 파일은 필수입니다" })
     .nullable()
-    .refine((f) => f !== null, "An audio file is required"),
-  category: z.string().min(1, "A category is required"),
-  language: z.string().min(1, "A language is required"),
+    .refine((f) => f !== null, "오디오 파일은 필수입니다"),
+  category: z.string().min(1, "카테고리는 필수입니다"),
+  language: z.string().min(1, "언어는 필수입니다"),
   description: z.string(),
 });
 
@@ -164,17 +164,17 @@ function FileDropzone({
 
       <div className="flex flex-col items-center gap-1.5">
         <p className="text-base font-semibold tracking-tight">
-          Upload your audio file
+          오디오 파일을 업로드하세요
         </p>
 
         <p className="text-center text-sm text-muted-foreground">
-          Supports all audio formats, max size 20MB
+          모든 오디오 형식 지원, 최대 크기 20MB
         </p>
       </div>
 
        <Button type="button" variant="outline" size="sm">
           <FolderOpen className="size-3.5" />
-          Upload file
+          파일 업로드
         </Button>
     </div>
   )
@@ -210,16 +210,16 @@ function LanguageCombobox({
         >
           <div className="flex items-center gap-2 truncate">
             <Globe className="size-4 shrink-0 text-muted-foreground" />
-            {value ? selectedLabel : "Select language..."}
+            {value ? selectedLabel : "언어 선택..."}
           </div>
           <ChevronsUpDown className="size-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-(--radix-popover-trigger-width) p-0">
         <Command>
-          <CommandInput placeholder="Search language..." />
+          <CommandInput placeholder="언어 검색..." />
           <CommandList>
-            <CommandEmpty>No language found.</CommandEmpty>
+            <CommandEmpty>언어를 찾을 수 없습니다.</CommandEmpty>
             <CommandGroup>
               {LANGUAGE_OPTIONS.map((lang) => (
                 <CommandItem
@@ -293,7 +293,7 @@ export function VoiceCreateForm({
 
       if (!response.ok) {
         const body = await response.json();
-        throw new Error(body.error ?? "Failed to create voice");
+        throw new Error(body.error ?? "음성 생성에 실패했습니다");
       }
 
       return response.json();
@@ -321,14 +321,14 @@ export function VoiceCreateForm({
           description: value.description || undefined,
          });
 
-         toast.success("Voice created successfully!");
+         toast.success("음성이 성공적으로 생성되었습니다!");
          queryClient.invalidateQueries({
           queryKey: trpc.voices.getAll.queryKey(),
         });
         form.reset();
       } catch (error) {
         const message =
-          error instanceof Error ? error.message : "Failed to create voice";
+          error instanceof Error ? error.message : "음성 생성에 실패했습니다";
         
         if (onError) {
           onError(message);
@@ -368,11 +368,11 @@ export function VoiceCreateForm({
                   <TabsList className="h-11! w-full">
                     <TabsTrigger value="upload">
                       <Upload className="size-3.5" />
-                      Upload
+                      업로드
                     </TabsTrigger>
                     <TabsTrigger value="record">
                       <Mic className="size-3.5" />
-                      Record
+                      녹음
                     </TabsTrigger>
                   </TabsList>
                   <TabsContent value="upload">
@@ -410,7 +410,7 @@ export function VoiceCreateForm({
                   </div>
                   <Input
                     id={field.name}
-                    placeholder="Voice Label"
+                    placeholder="음성 이름"
                     aria-invalid={isInvalid}
                     value={field.state.value}
                     onChange={(e) => field.handleChange(e.target.value)}
@@ -442,7 +442,7 @@ export function VoiceCreateForm({
                   >
                     <SelectTrigger className="w-full pl-10">
                       <SelectValue 
-                        placeholder="Select category..."
+                        placeholder="카테고리 선택..."
                       />
                     </SelectTrigger>
                     <SelectContent>
@@ -490,7 +490,7 @@ export function VoiceCreateForm({
                   </div>
                   <Textarea
                     id={field.name}
-                    placeholder="Describe this voice..."
+                    placeholder="이 음성을 설명해 주세요..."
                     aria-invalid={isInvalid}
                     value={field.state.value}
                     onChange={(e) => field.handleChange(e.target.value)}
@@ -514,7 +514,7 @@ export function VoiceCreateForm({
         {({ isSubmitting }) => {
           const submitButton = (
             <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Creating..." : "Create Voice"}
+              {isSubmitting ? "생성 중..." : "음성 생성"}
             </Button>
           );
 

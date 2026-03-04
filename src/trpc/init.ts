@@ -9,10 +9,9 @@ export const createTRPCContext = cache(async () => {
    */
   return {};
 });
-// Avoid exporting the entire t-object
-// since it's not very descriptive.
-// For instance, the use of a t variable
-// is common in i18n libraries.
+// 전체 t-object를 내보내지 않음
+// 설명적이지 않고, t 변수는
+// i18n 라이브러리에서 흔히 사용되기 때문
 const t = initTRPC.create({
   /**
    * @see https://trpc.io/docs/server/data-transformers
@@ -26,12 +25,12 @@ const sentryMiddleware = t.middleware(
   }),
 );
 
-// Base router and procedure helpers
+// 기본 라우터 및 프로시저 헬퍼
 export const createTRPCRouter = t.router;
 export const createCallerFactory = t.createCallerFactory;
 export const baseProcedure = t.procedure.use(sentryMiddleware);
 
-// Authenticated procedure - calls auth() only when needed
+// 인증된 프로시저 - 필요 시에만 auth() 호출
 export const authProcedure = baseProcedure.use(async ({ next }) => {
   const { userId } = await auth();
 
@@ -44,7 +43,7 @@ export const authProcedure = baseProcedure.use(async ({ next }) => {
   });
 });
 
-// Organization procedure - requires userId and orgId
+// 조직 프로시저 - userId와 orgId 필요
 export const orgProcedure = baseProcedure.use(async ({ next }) => {
   const { userId, orgId } = await auth();
 
@@ -55,7 +54,7 @@ export const orgProcedure = baseProcedure.use(async ({ next }) => {
   if (!orgId) {
     throw new TRPCError({
       code: "FORBIDDEN",
-      message: "Organization required",
+      message: "조직이 필요합니다",
     });
   }
 

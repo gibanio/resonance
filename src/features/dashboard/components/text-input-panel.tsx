@@ -32,7 +32,7 @@ export function TextInputPanel() {
       <div className="rounded-[20px] bg-[#F9F9F9] p-1">
         <div className="space-y-4 rounded-2xl bg-white p-4 drop-shadow-xs">
           <Textarea
-            placeholder="Start typing or paste your text here..."
+            placeholder="텍스트를 입력하거나 붙여넣으세요..."
             className="min-h-35 resize-none border-0 bg-transparent p-0 shadow-none focus-visible:ring-0"
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -46,19 +46,19 @@ export function TextInputPanel() {
               <Coins className="size-3 text-chart-5" />
               <span className="text-xs">
                 {text.length === 0 ? (
-                  "Start typing to estimate"
+                  "입력하면 예상 비용이 표시됩니다"
                 ) : (
                   <>
                     <span className="tabular-nums">
                       ${(text.length * COST_PER_UNIT).toFixed(4)}
                     </span>{" "}
-                    estimated
+                    예상
                   </>
                 )}
               </span>
             </Badge>
             <span className="text-xs text-muted-foreground">
-              {text.length.toLocaleString()} / {TEXT_MAX_LENGTH.toLocaleString()} characters
+              {text.length.toLocaleString()} / {TEXT_MAX_LENGTH.toLocaleString()} 자
             </span>
           </div>
         </div>
@@ -72,7 +72,7 @@ export function TextInputPanel() {
             onClick={handleGenerate}
             className="w-full lg:w-auto"
           >
-            Generate speech
+            음성 생성
           </Button>
         </div>
       </div>
