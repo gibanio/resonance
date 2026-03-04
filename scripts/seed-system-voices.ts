@@ -153,6 +153,26 @@ const systemVoiceMetadata: Record<string, VoiceMetadata> = {
     category: "NARRATIVE",
     language: "en-US",
   },
+  민준: {
+    description: "차분하고 명확한 한국어 음성, 뉴스 낭독에 적합",
+    category: "GENERAL",
+    language: "ko-KR",
+  },
+  서연: {
+    description: "또렷하고 전문적인 한국어 음성, 비즈니스 프레젠테이션에 적합",
+    category: "CORPORATE",
+    language: "ko-KR",
+  },
+  지호: {
+    description: "자연스럽고 편안한 한국어 음성, 일상 대화에 적합",
+    category: "CONVERSATIONAL",
+    language: "ko-KR",
+  },
+  하은: {
+    description: "부드럽고 따뜻한 한국어 음성, 오디오북 낭독에 적합",
+    category: "AUDIOBOOK",
+    language: "ko-KR",
+  },
 };
 
 async function readSystemVoiceAudio(name: string) {

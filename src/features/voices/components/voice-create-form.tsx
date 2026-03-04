@@ -305,7 +305,7 @@ export function VoiceCreateForm({
       name: "",
       file: null as File | null,
       category: "GENERAL" as string,
-      language: "en-US",
+      language: "ko-KR",
       description: "",
     },
     validators: {

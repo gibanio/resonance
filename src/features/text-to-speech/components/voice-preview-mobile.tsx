@@ -72,9 +72,9 @@ export function VoicePreviewMobile({
       text
         .slice(0, 50)
         .trim()
-        .replace(/[^a-zA-Z0-9]+/g, "-")
+        .replace(/[^\p{L}\p{N}]+/gu, "-")
         .replace(/^-|-$/g, "")
-        .toLowerCase() || "speech";
+        .toLowerCase() || "음성";
 
     const link = document.createElement("a");
     link.href = audioUrl;

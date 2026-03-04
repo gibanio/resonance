@@ -19,4 +19,8 @@ export const CANONICAL_SYSTEM_VOICE_NAMES = [
   "Marisol",
   "Meera",
   "Walter",
+  "민준",
+  "서연",
+  "지호",
+  "하은",
 ] as const;
