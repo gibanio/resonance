@@ -33,7 +33,7 @@ export function PageHeader({
          <Button variant="outline" size="sm" asChild>
           <Link href="mailto:business@codewithantonio.com">
             <Headphones />
-            <span className="hidden lg:block">도움이 필요하신가요?</span>
+            <span className="hidden lg:block">도움말</span>
           </Link>
         </Button>
       </div>

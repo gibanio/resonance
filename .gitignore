@@ -49,3 +49,6 @@ __pycache__
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+# playwright-cli
+.playwright-cli/
